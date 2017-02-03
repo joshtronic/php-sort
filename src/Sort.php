@@ -48,7 +48,7 @@ class Sort
      * @param string $field field to sort by
      * @param array $array array to sort
      * @param string $direction optional direction to sort
-     * @retun boolean true because sorting is done by reference
+     * @return boolean true because sorting is done by reference
      */
     public static function by($field, &$array, $direction = Sort::ASC)
     {
