@@ -27,7 +27,7 @@ class Sort
      *
      * Variable to utilize ascending sort
      *
-     * @var integer
+     * @var string
      */
     const ASC = 'ASC';
 
@@ -36,7 +36,7 @@ class Sort
      *
      * Variable to utilize descending sort
      *
-     * @var integer
+     * @var string
      */
     const DESC = 'DESC';
 
