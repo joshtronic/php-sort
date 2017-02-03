@@ -1,0 +1,20 @@
+{
+    "name": "joshtronic/php-sort",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "platform": {
+            "php": ">=5.3"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Pickles\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pickles\\Tests\\": "tests"
+        }
+    }
+}

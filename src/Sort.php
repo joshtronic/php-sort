@@ -27,7 +27,7 @@ class Sort
      *
      * Variable to utilize ascending sort
      *
-     * @var integer
+     * @var string
      */
     const ASC = 'ASC';
 
@@ -36,7 +36,7 @@ class Sort
      *
      * Variable to utilize descending sort
      *
-     * @var integer
+     * @var string
      */
     const DESC = 'DESC';
 
@@ -48,23 +48,21 @@ class Sort
      * @param string $field field to sort by
      * @param array $array array to sort
      * @param string $direction optional direction to sort
-     * @retun boolean true because sorting is done by reference
+     * @return boolean true because sorting is done by reference
      */
     public static function by($field, &$array, $direction = Sort::ASC)
     {
-        usort($array, create_function('$a, $b', '
-            $a = $a["' . $field . '"];
-            $b = $b["' . $field . '"];
+        usort($array, function ($a, $b) use ($field, $direction) {
+            $a = $a[$field];
+            $b = $b[$field];
 
-            if ($a == $b)
-            {
+            if ($a === $b) {
                 return 0;
             }
 
-            return ($a ' . ($direction == Sort::DESC ? '>' : '<') .' $b) ? -1 : 1;
-        '));
+            return ($a < $b ? -1 : 1) * ($direction === Sort::DESC ? -1 : 1);
+        });
 
         return true;
     }
 }
-
