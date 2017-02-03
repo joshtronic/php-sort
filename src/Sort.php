@@ -52,19 +52,17 @@ class Sort
      */
     public static function by($field, &$array, $direction = Sort::ASC)
     {
-        usort($array, create_function('$a, $b', '
-            $a = $a["' . $field . '"];
-            $b = $b["' . $field . '"];
+        usort($array, function ($a, $b) use ($field, $direction) {
+            $a = $a[$field];
+            $b = $b[$field];
 
-            if ($a == $b)
-            {
+            if ($a === $b) {
                 return 0;
             }
 
-            return ($a ' . ($direction == Sort::DESC ? '>' : '<') .' $b) ? -1 : 1;
-        '));
+            return ($a < $b ? -1 : 1) * ($direction === Sort::DESC ? -1 : 1);
+        });
 
         return true;
     }
 }
-
