@@ -6,13 +6,13 @@
  * Licensed under The MIT License
  * Redistribution of these files must retain the above copyright notice.
  *
- * @copyright Copyright 2007-2014, Josh Sherman
+ * @author    Josh Sherman <hello@joshtronic.com>
+ * @copyright Copyright 2007-2017, Josh Sherman
  * @license   http://www.opensource.org/licenses/mit-license.html
- * @link      https://github.com/joshtronic/pickles
- * @package   Pickles
+ * @link      https://github.com/joshtronic/php-sort
  */
 
-namespace Pickles;
+namespace joshtronic;
 
 /**
  * Sort Class
@@ -66,3 +66,4 @@ class Sort
         return true;
     }
 }
+

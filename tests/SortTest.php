@@ -1,10 +1,10 @@
 <?php
 
-namespace Pickles\Tests;
+require_once '../src/Sort.php';
 
-use Pickles\Sort;
+use joshtronic\Sort;
 
-class SortTest extends \PHPUnit_Framework_TestCase
+class SortTest extends PHPUnit_Framework_TestCase
 {
     public function testByNameASC()
     {
@@ -62,3 +62,4 @@ class SortTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($sorted, $shuffled);
     }
 }
+
