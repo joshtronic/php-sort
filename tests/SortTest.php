@@ -8,21 +8,21 @@ class SortTest extends PHPUnit_Framework_TestCase
 {
     public function testByNameASC()
     {
-        $shuffled = [
-            ['name' => 'epsilon'],
-            ['name' => 'gamma'],
-            ['name' => 'alpha'],
-            ['name' => 'delta'],
-            ['name' => 'beta'],
-        ];
+        $shuffled = array(
+            array('name' => 'epsilon'),
+            array('name' => 'gamma'),
+            array('name' => 'alpha'),
+            array('name' => 'delta'),
+            array('name' => 'beta'),
+        );
 
-        $sorted = [
-            ['name' => 'alpha'],
-            ['name' => 'beta'],
-            ['name' => 'delta'],
-            ['name' => 'epsilon'],
-            ['name' => 'gamma'],
-        ];
+        $sorted = array(
+            array('name' => 'alpha'),
+            array('name' => 'beta'),
+            array('name' => 'delta'),
+            array('name' => 'epsilon'),
+            array('name' => 'gamma'),
+        );
 
         Sort::by('name', $shuffled);
 
@@ -31,21 +31,21 @@ class SortTest extends PHPUnit_Framework_TestCase
 
     public function testByNameDESC()
     {
-        $shuffled = [
-            ['name' => 'epsilon'],
-            ['name' => 'gamma'],
-            ['name' => 'alpha'],
-            ['name' => 'delta'],
-            ['name' => 'beta'],
-        ];
+        $shuffled = array(
+            array('name' => 'epsilon'),
+            array('name' => 'gamma'),
+            array('name' => 'alpha'),
+            array('name' => 'delta'),
+            array('name' => 'beta'),
+        );
 
-        $sorted = [
-            ['name' => 'gamma'],
-            ['name' => 'epsilon'],
-            ['name' => 'delta'],
-            ['name' => 'beta'],
-            ['name' => 'alpha'],
-        ];
+        $sorted = array(
+            array('name' => 'gamma'),
+            array('name' => 'epsilon'),
+            array('name' => 'delta'),
+            array('name' => 'beta'),
+            array('name' => 'alpha'),
+        );
 
         Sort::by('name', $shuffled, Sort::DESC);
 
@@ -54,8 +54,8 @@ class SortTest extends PHPUnit_Framework_TestCase
 
     public function testMissingField()
     {
-        $shuffled = [['foo' => 'bar', 'bar' => 'foo']];
-        $sorted   = [['foo' => 'bar', 'bar' => 'foo']];
+        $shuffled = array(array('foo' => 'bar', 'bar' => 'foo'));
+        $sorted   = array(array('foo' => 'bar', 'bar' => 'foo'));
 
         Sort::by('name', $shuffled);
 
