@@ -3,9 +3,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "platform": {
-            "php": ">=5.3"
-        }
+        "php": ">=5.3.0"
     },
     "require-dev": {
         "satooshi/php-coveralls": "~1.0"
